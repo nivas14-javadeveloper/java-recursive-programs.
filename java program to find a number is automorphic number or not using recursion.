@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class A 
+{
+    public static void main(String[]args)
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter a number");
+        int n=s.nextInt();
+        int sq=n*n;
+        auto(n,sq);
+    }
+    public static int count(int n)
+    {
+        if(n==0)
+        {
+            return 0;
+        }
+        return 1+count(n/10);
+    }
+    public static void auto(int n,int sq)
+    {
+        int div=(int)Math.pow(10,count(n));
+        if(n%div==sq%div)
+        {
+            System.out.println(n+" is an automorphic number");
+        }
+        else 
+        {
+            System.out.println(n+" is not an automorphic number");
+        }
+    }
+}
