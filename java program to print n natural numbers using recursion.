@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	     Scanner s=new Scanner(System.in);
+		int n=1;
+		System.out.println("enter number of natural numbers to print:");
+		int range=s.nextInt();
+		natural(n,range);
+	}
+	static void natural(int n,int range)
+	{
+	    if(n>range)
+	    {
+	        return;
+	    }
+	    System.out.println(n);
+	    natural(n+1,range);
+	}
+}
