@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class A 
+{
+    public static void main(String[]args)
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter a number:");
+        int n=s.nextInt();
+        int div=n/2;
+        int sum1=factors(n,div);
+        if(sum1==n)
+        {
+            System.out.println(n+" "+"is a perfect number.");
+        }
+        else 
+        {
+            System.out.println(n+" "+"is not a perfect number.");
+        }
+    }
+    static int factors(int n,int div)
+    {
+        if(div==0)
+        {
+            return 0;
+        }
+        int sum=0;
+        if(n%div==0)
+        {
+            sum=div;
+        }
+        return sum+factors(n,div-1);
+    }
+}
