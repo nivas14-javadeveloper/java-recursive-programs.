@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class A 
+{
+    public static void main(String[]args)
+    {
+        Scanner s=new Scanner(System.in);
+        int a=0;
+        int b=1;
+        int count=3;
+        System.out.println("enter a number to print fibonacci series:");
+        int n=s.nextInt();
+        System.out.print(a+" "+b);
+        fibo(n,a,b,count);
+    }
+    static int fibo(int n,int a,int b,int count)
+    {
+        if(count>n)
+        {
+            return 0;
+        }
+        int c=a+b;
+        a=b;
+        b=c;
+        System.out.print(" "+c);
+        return fibo(n,a,b,count+1);
+    }
+}
