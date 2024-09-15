@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class A 
+{
+    public static void main(String[]args)
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter a number");
+        int a=s.nextInt();
+        System.out.println("the reverse of number"+" "+ a+" "+"is"+" "+reverse(a));
+    }
+    static int count(int n)
+    {
+        int i=1;
+        while(n>10)
+        {
+            i*=10;     
+            n/=10;
+        }
+        return i;
+    }
+    static int reverse(int n)
+    {
+        if(n==0)
+        {
+            return 0;
+        }
+        return reverse(n/10)+(n%10)*count(n);
+    }
+}
